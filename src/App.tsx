@@ -1,5 +1,16 @@
-export default function App() {
-  const message: string = "Hello React + TypeScript ";
+import Footer from "./components/layout/Footer";
+import Header from "./components/layout/Header";
+import Layout from "./components/layout/Layout";
 
-  return <h1>{message}</h1>;
-}
+import styles from "./App.module.css";
+const App = () => {
+  return (
+    <div className={styles.app}>
+      <Header />
+      <Layout />
+      <Footer />
+    </div>
+  );
+};
+
+export default App;
