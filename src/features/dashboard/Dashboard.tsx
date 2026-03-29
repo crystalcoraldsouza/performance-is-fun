@@ -1,5 +1,5 @@
-import StocksSearch from "../../features/stocks/StocksSearch";
-import StockSummary from "../../features/stocks/StockSummary";
+import StocksSearch from "../stocks/StocksSearch";
+import StockSummary from "../stocks/StockSummary";
 import { StockProvider } from "../../context/StockContext";
 
 import styles from "./Dashboard.module.css";

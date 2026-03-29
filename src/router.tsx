@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import Dashboard from "./components/layout/Dashboard";
+import Dashboard from "./features/dashboard/Dashboard";
+import ContactUs from "./features/contact/ContactUs";
 
 export const router = createBrowserRouter([
   {
@@ -17,7 +18,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "contact-us",
-        element: <div>Contact us</div>,
+        element: <ContactUs />,
       },
     ],
   },
