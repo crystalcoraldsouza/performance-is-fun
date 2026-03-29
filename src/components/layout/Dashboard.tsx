@@ -1,6 +1,6 @@
-import styles from "./Layout.module.css";
+import styles from "./Dashboard.module.css";
 
-const Layout = () => {
+const Dashboard = () => {
   return (
     <main className={styles.main}>
       <section className={styles.section}>
@@ -10,4 +10,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default Dashboard;
