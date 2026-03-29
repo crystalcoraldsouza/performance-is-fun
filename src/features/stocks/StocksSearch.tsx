@@ -8,6 +8,7 @@ import { stockService } from "../../services/stock.service";
 import { useStockContext } from "../../context/StockContext";
 import type { SymbolData } from "../../types/symbol";
 import { delay } from "../../utils/delay";
+import { useOutsideClick } from "../../hooks/useOutsideClick";
 import styles from "./StocksSearch.module.css";
 
 type RowData = {
@@ -32,20 +33,8 @@ const StocksSearch = () => {
   const { setSelectedStock } = useStockContext();
   const autoCompleteRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleOutsideClick = (event: MouseEvent) => {
-      if (
-        autoCompleteRef.current &&
-        !autoCompleteRef.current.contains(event.target as Node)
-      ) {
-        setShowDropdown(false);
-      }
-    };
-    document.addEventListener("mousedown", handleOutsideClick);
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    };
-  }, []);
+  useOutsideClick(autoCompleteRef, () => setShowDropdown(false));
+
   useEffect(() => {
     const timeout = setTimeout(async () => {
       setShowDropdown(true);
