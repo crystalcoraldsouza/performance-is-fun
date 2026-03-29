@@ -1,12 +1,19 @@
+import StocksSearch from "../../features/stocks/StocksSearch";
+import StockSummary from "../../features/stocks/StockSummary";
+import { StockProvider } from "../../context/StockContext";
+
 import styles from "./Dashboard.module.css";
 
 const Dashboard = () => {
   return (
-    <main className={styles.main}>
-      <section className={styles.section}>
-        <h1>Hello React + TypeScript </h1>
-      </section>
-    </main>
+    <StockProvider>
+      <main className={styles.main}>
+        <section className={styles.section}>
+          <StocksSearch />
+          <StockSummary />
+        </section>
+      </main>
+    </StockProvider>
   );
 };
 

@@ -1,0 +1,10 @@
+.container {
+    margin-top: 20px;
+}
+
+.stockDetails {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: #8f8f8f;
+}
